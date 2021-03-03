@@ -1,2 +1,0 @@
-# microeconometrics
-Notas sobre microeconometría

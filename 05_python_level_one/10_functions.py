@@ -69,7 +69,7 @@ def code_maker(mystring):
 		for vowel in ["a", "e", "i", "o", "u"]:
 			if letter.lower() == vowel:
 				output[i] = "x"
-	output = ''.join(output)
+	output = "".join(output)
 	return output
 
 

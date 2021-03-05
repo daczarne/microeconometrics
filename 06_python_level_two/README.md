@@ -64,13 +64,6 @@ def enclosing():
   global x
   x = "inside"
 ```
-``` python
-x = "outside"
-def enclosing():
-  global x
-  x = "inside"
-  return x
-```
 
 If we need to have access to a global variable inside a function, just pass it as an argument.
 
@@ -80,3 +73,7 @@ def enclosing(x):
   x = "inside"
   return x
 ```
+
+# Decorators
+
+Decorators can be thought of as functions which modify the "functionality" of another function.

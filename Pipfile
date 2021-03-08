@@ -17,6 +17,7 @@ flask-dance = {extras = ["sqla"], version = "*"}
 pillow = "*"
 flask-restful = "*"
 flask-jwt = "*"
+stripe = "*"
 
 [dev-packages]
 

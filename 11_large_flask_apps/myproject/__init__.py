@@ -14,7 +14,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "da
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
-Migrate(app,db)
+Migrate(app, db)
 
 # NOTE! These imports need to come after you've defined db, otherwise you will
 # get errors in your models.py files.

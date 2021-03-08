@@ -9,7 +9,7 @@ class LoginForm(FlaskForm):
 	password = PasswordField("Password", validators = [DataRequired()])
 	submit = SubmitField("Log In")
 
-# Reguistration
+# Registration
 class RegistrationForm(FlaskForm):
 	email = StringField("Email", validators = [DataRequired(), Email()])
 	username = StringField("Username", validators = [DataRequired()])
@@ -22,13 +22,13 @@ class RegistrationForm(FlaskForm):
 	)
 	pass_confirm = PasswordField("Confirm password", validators = [DataRequired()])
 	submit = SubmitField("Register!")
-	# Check email
-	def check_email(self, field):
+	# Validate email
+	def validate_email(self, field):
 		# Check if not None for that user email!
 		if User.query.filter_by(email = field.data).first():
 			raise ValidationError("Your email has been registered already!")
-	# Check username
-	def check_username(self, field):
+	# Validate username
+	def validate_username(self, field):
 		# Check if not None for that username!
 		if User.query.filter_by(username = field.data).first():
 			raise ValidationError("Sorry, that username is taken!")

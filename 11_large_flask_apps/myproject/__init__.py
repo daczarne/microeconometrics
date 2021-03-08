@@ -16,6 +16,8 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 Migrate(app, db)
 
+### BLUEPRINTS ###
+
 # NOTE! These imports need to come after you've defined db, otherwise you will
 # get errors in your models.py files.
 

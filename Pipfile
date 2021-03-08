@@ -11,6 +11,7 @@ sqlalchemy = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-bcrypt = "*"
+werkzeug = "*"
 
 [dev-packages]
 

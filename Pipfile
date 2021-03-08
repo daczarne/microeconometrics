@@ -13,7 +13,7 @@ flask-migrate = "*"
 flask-bcrypt = "*"
 werkzeug = "*"
 flask-login = "*"
-flask-dance = "*"
+flask-dance = {extras = ["sqla"], version = "*"}
 
 [dev-packages]
 

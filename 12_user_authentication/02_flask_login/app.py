@@ -3,20 +3,19 @@ from flask import render_template, redirect, request, url_for, flash, abort
 from flask_login import login_user, login_required, logout_user
 from myproject.models import User
 from myproject.forms import LoginForm, RegistrationForm
-from werkzeug.security import generate_password_hash, check_password_hash
 
-
+# Home page
 @app.route("/")
 def home():
 	return render_template("home.html")
 
-
+# Welcome page
 @app.route("/welcome")
 @login_required
 def welcome_user():
 	return render_template("welcome_user.html")
 
-
+# Logut page
 @app.route("/logout")
 @login_required
 def logout():
@@ -24,7 +23,7 @@ def logout():
 	flash("You logged out!")
 	return redirect(url_for("home"))
 
-
+# Login page
 @app.route("/login", methods = ["GET", "POST"])
 def login():
 	form = LoginForm()
@@ -41,10 +40,10 @@ def login():
 			# So let's now check if that next exists, otherwise we'll go to the welcome page.
 			if next == None or not next[0] == "/":
 				next = url_for("welcome_user")
-				return redirect(next)
+			return redirect(next)
 	return render_template("login.html", form = form)
 
-
+# Registration
 @app.route("/register", methods = ["GET", "POST"])
 def register():
 	form = RegistrationForm()
@@ -60,6 +59,6 @@ def register():
 		return redirect(url_for("login"))
 	return render_template("register.html", form = form)
 
-
+# Run the app
 if __name__ == "__main__":
 	app.run(debug = True)

@@ -23,12 +23,12 @@ class RegistrationForm(FlaskForm):
 	pass_confirm = PasswordField("Confirm password", validators = [DataRequired()])
 	submit = SubmitField("Register!")
 	# Validate email
-	def validate_email(self, field):
+	def validate_email(self, email):
 		# Check if not None for that user email!
-		if User.query.filter_by(email = field.data).first():
+		if User.query.filter_by(email = self.email.data).first():
 			raise ValidationError("Your email has been registered already!")
 	# Validate username
-	def validate_username(self, field):
+	def validate_username(self, username):
 		# Check if not None for that username!
-		if User.query.filter_by(username = field.data).first():
+		if User.query.filter_by(username = self.username.data).first():
 			raise ValidationError("Sorry, that username is taken!")
